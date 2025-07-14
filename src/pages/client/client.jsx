@@ -44,7 +44,7 @@ const Client = () => {
           <div className="layout-left">
             <PayoutCard userData={userData} isLoading={isLoading} formatDate={formatDate} />
             <PayoutDate userData={userData} isLoading={isLoading} formatDate={formatDate} />
-            <AssetsCard userData={userData} isLoading={isLoading} width="420px"/>
+            <AssetsCard userData={userData} isLoading={isLoading} />
             <TransactionsCard userData={userData} isLoading={isLoading} />
           </div>
           <div className="layout-right">

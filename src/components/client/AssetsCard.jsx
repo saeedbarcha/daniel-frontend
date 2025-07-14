@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./AssetsCard.css";
+
 import trumpcard from "../../assets/card.jpeg";
 import trumpAgreement from "../../assets/aggrement.png";
 import trumpCertificate from "../../assets/certificate.jpeg";
@@ -7,86 +8,88 @@ import trumpCertificate from "../../assets/certificate.jpeg";
 const AssetsCard = ({ userData, isLoading, formatDate, width }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
+  /* ---------- helpers -------------------------------------------------- */
   const getImageByPaymentSource = () => {
-    const source = userData?.payment_source;
-    switch (source) {
+    switch (userData?.payment_source) {
       case "TRUMP_CARD":
         return trumpcard;
       case "TRUMP_AGREEMENT":
         return trumpAgreement;
       case "TRUMP_CERTIFICATE":
-        return trumpCertificate;
       default:
         return trumpCertificate;
     }
   };
 
-  const getCardSizeClass = () => {
-    const source = userData?.payment_source;
-    switch (source) {
-      case "TRUMP_CARD":
-        return "card-sm";
-      case "TRUMP_AGREEMENT":
-        return "card-md";
-      case "TRUMP_CERTIFICATE":
-        return "p-3";
-      default:
-        return "card-md";
-    }
-  };
-
+  /* ---------- modal helpers ------------------------------------------- */
   const handleImageClick = () => {
     setModalOpen(true);
     window.scrollTo({ top: 80, behavior: "smooth" });
   };
+  const closeModal = () => setModalOpen(false);
 
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  /* Prevent background scroll when modal open */
+  useEffect(() => {
+    document.body.style.overflow = isModalOpen ? "hidden" : "auto";
+  }, [isModalOpen]);
 
   const selectedImage = getImageByPaymentSource();
-  const cardSizeClass = getCardSizeClass();
+  const paymentSource  = userData?.payment_source;
 
+  /* ---------- render --------------------------------------------------- */
   return (
-    <div className={`assets-container ${userData?.payment_source === "TRUMP_CERTIFICATE" ? "assets-container-certificate" : ""}`}>
+    <div
+      className={`assets-container ${
+        paymentSource === "TRUMP_CERTIFICATE" ? "assets-container-certificate" : ""
+      }`}
+      style={width ? { maxWidth: width } : undefined}
+    >
       <div
-        className={`card ${cardSizeClass} ${userData?.payment_source === "TRUMP_CARD" ? "trumpcard-bg" : ""
-          }`}
+        className={`card p-3 assets-card-wrapper ${
+          paymentSource === "TRUMP_CERTIFICATE" ? "certificate-card" : ""
+        }`}
+        role="button"
         onClick={handleImageClick}
       >
-        {userData?.payment_source !== "TRUMP_CARD" && (
-          <img src={selectedImage} alt="Trump Document" style={{ height: width }} />
-        )}
+        {/* ---------- image ---------- */}
+        <img
+          className="assets-card-img"
+          src={selectedImage}
+          alt="Trump Document"
+        />
 
-        {userData?.payment_source === "TRUMP_CARD" && (
+        {/* ---------- optional shine / overlay for TRUMP_CARD ---------- */}
+        {paymentSource === "TRUMP_CARD" && (
           <>
-            <div className="card-text-overlay">
-              {/* <div className="top-left-text">
-                <div className="trump-title">T R U M P</div>
-                <div className="trump-subtitle-container">
-                  <hr />
-                  <div className="trump-subtitle">THE TRUMP ORGANIZATION</div>
-                  <hr />
-                </div>
-              </div> */}
-
-              {/* <div className="bottom-right-text">VISA</div> */}
-            </div>
             <div className="card-shine" />
+            {/* overlay texts removed; add back if needed */}
           </>
         )}
       </div>
 
+      {/* ---------- modal ---------- */}
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>
-          <button className="modal-close-button" onClick={closeModal}>
+          <button
+            className="modal-close-button"
+            type="button"
+            onClick={closeModal}
+          >
             &times;
           </button>
+
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div style={{ padding: "20px 0px" }}>
-            
-            <img src={selectedImage} alt="Enlarged Document" />
-            </div>
+            <img
+              className={`modal-img ${
+                paymentSource === "TRUMP_CERTIFICATE"
+                  ? "modal-img-certificate"
+                  : paymentSource === "TRUMP_CARD"
+                  ? "modal-img-card"
+                  : "modal-img-agreement"
+              }`}
+              src={selectedImage}
+              alt="Enlarged Document"
+            />
           </div>
         </div>
       )}
