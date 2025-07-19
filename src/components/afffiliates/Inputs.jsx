@@ -247,7 +247,6 @@ const InputsAffiliates = () => {
           email: inputValues.email,
           phone: inputValues.phone,
           payout_date: inputValues.payout_date || currentClient.payout_date,
-          country_id: 1,
           role: "CLIENT", // Changed from AFFILIATE to CLIENT
           city: inputValues.city,
           telegram_url: inputValues.telegram_url,
@@ -276,7 +275,6 @@ const InputsAffiliates = () => {
           password: inputValues.password,
           payout_date: inputValues.payout_date,
           role: "CLIENT",
-          country_id: 1,
           city: inputValues.city,
           telegram_url: inputValues.telegram_url,
           payout_amount: parseInt(inputValues.payout_amount),
