@@ -56,9 +56,9 @@ const Header = () => {
           ☰
         </button>
         <div className="header-box heading-box">
-          <h2 className="welcome-text">
+          {/* <h2 className="welcome-text">
             Welcome, {userInfo?.user?.name || userInfo?.name || "Client"}
-          </h2>
+          </h2> */}
         </div>
       </div>
 
@@ -96,12 +96,12 @@ const Header = () => {
             </div>
           </div>
 
-          <button onClick={()=> setIsMenuOpen(false)}>
+          {/* <button onClick={()=> setIsMenuOpen(false)}>
             <FaStar /> Premium Payment Plan
           </button>
           <button onClick={()=> setIsMenuOpen(false)}>
             <VscIssueReopened /> Regular Payment Plan
-          </button>
+          </button> */}
           <button onClick={()=> setIsMenuOpen(false)}>
             <AiFillMessage /> Contact Agent
           </button>

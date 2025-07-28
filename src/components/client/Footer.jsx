@@ -7,10 +7,10 @@ const Footer = () => {
     return (
 
         <div className='footer-container'>
-            <p style={{ fontSize: "12px", textAlign: "center", marginTop: "2rem",color:"white" }}>
+            {/* <p style={{ fontSize: "12px", textAlign: "center", marginTop: "2rem",color:"white" }}>
                 D.O.G.E - Department of Government Efficiency
                 Certified Secure Transaction System</p>
-            <img className='image' src={logo} alt="Logo" />
+            <img className='image' src={logo} alt="Logo" /> */}
         </div>
 
 

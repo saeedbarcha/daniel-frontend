@@ -14,7 +14,7 @@ const TransactionsCard = () => {
             />
 
 
-            <p >Failed TRB transactions prior to D.O.G.E. takeover</p>
+            <p >Failed TRB Transactions prior to your Trump Organization Account</p>
 
             <TransactionSubCards
                 date={"2023-10-01"}
