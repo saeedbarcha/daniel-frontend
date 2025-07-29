@@ -1,37 +1,41 @@
-import React from 'react'
-import "./App.css"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { createBrowserRouter } from 'react-router-dom';
-import { RouterProvider } from 'react-router-dom';
-import ProtectedRoute from './routes/ProtectedRoute';
-import Affiliates from './pages/affiliates/affiliates';
-import AdminLogin from './pages/admin/login';
-import AffiliatesLogin from './pages/affiliates/login';
-import Client from './pages/client/client';
-import ClientLogin from './pages/client/login';
-import AdminDashboard from './pages/admin/adminDashboard';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import ProfilePage from './pages/profile/profile';
-import PageNotFound from './pages/not_found/pagenotfound';
+import React from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import Affiliates from "./pages/affiliates/affiliates";
+import AdminLogin from "./pages/admin/login";
+import AffiliatesLogin from "./pages/affiliates/login";
+import Client from "./pages/client/client";
+import ClientLogin from "./pages/client/login";
+import AdminDashboard from "./pages/admin/adminDashboard";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ProfilePage from "./pages/profile/profile";
+import  PageNotFound  from "./pages/not_found/index.jsx";
 
 const App = () => {
-
   const router = createBrowserRouter([
- 
     {
       path: "/client-login",
-      element: <ClientLogin />
-
+      element: <ClientLogin />,
     },
     {
       path: "/client-dashboard",
-      element: <ProtectedRoute element={<Client />} redirectTo="/client-login" />
+      element: (
+        <ProtectedRoute element={<Client />} redirectTo="/client-login" />
+      ),
     },
-  
+
     {
       path: "/affiliate-dashboard",
-      element: <ProtectedRoute element={<Affiliates />} redirectTo="/affiliate-login" />
+      element: (
+        <ProtectedRoute
+          element={<Affiliates />}
+          redirectTo="/affiliate-login"
+        />
+      ),
     },
 
     {
@@ -44,22 +48,24 @@ const App = () => {
     },
     {
       path: "/admin-dashboard",
-      element: <ProtectedRoute element={<AdminDashboard />} redirectTo="/admin-login" />
+      element: (
+        <ProtectedRoute
+          element={<AdminDashboard />}
+          redirectTo="/admin-login"
+        />
+      ),
     },
     {
       path: "/profile-page",
-      element:<ProfilePage/>
+      element: <ProfilePage />,
     },
     { path: "*", element: <PageNotFound /> },
-
- 
-
-  ])
+  ]);
 
   return (
     <>
       <RouterProvider router={router} />
-      <ToastContainer 
+      <ToastContainer
         position="top-right"
         autoClose={3000}
         hideProgressBar={false}
@@ -72,7 +78,7 @@ const App = () => {
         theme="light"
       />
     </>
-  )
-}
+  );
+};
 
 export default App;
