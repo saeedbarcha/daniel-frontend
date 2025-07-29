@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/client/Header";
 import Footer from "../components/client/Footer";
-import FooterLast from "../Components/client/FooterLast";
+import FooterLast from "../components/client/FooterLast";
 
 const DashboardLayout = ({ children }) => {
   return (
