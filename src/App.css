@@ -38,6 +38,37 @@ body {
   width: 31%;
 }
 
+.btn-info {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #0dcaf0;
+  text-align: center;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.input-label {
+  font-size: 14px;
+}
+
+.input-text {
+  font-size: 14px;
+  padding: 5px;
+  outline: none;
+}
+
+.password-eye {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
 @media (max-width: 1340px) {
   .layout-left {
     width: 100%;
@@ -69,19 +100,19 @@ body {
 
 .form-container {
   width: 490px;
-  height: 400px;
+  /* height: 400px; */
   margin: 0 auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: #fafafa;
   padding: 3rem 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 10px;
 }
 
 .form-group {
@@ -100,24 +131,68 @@ body {
 
 .heading-login {
   text-align: center;
+  gap: 5px;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 @media (max-width: 468px) {
   .form-container {
-    width: 100%;
-    padding: 1rem;
+    width: 140px;
+    padding: 5px 14px 12px 14px;
+    gap: 5px;
+    border-radius: 0.1rem;
+  }
+
+  .page-background {
+    background-position: top !important;
+  }
+
+  .input-label {
+    font-size: 8px;
+    margin-bottom: -5px;
+    font-family: 'Franklin Gothic Medium';
+  }
+
+  .password-eye {
+    position: absolute;
+    top: 60%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 8px;
+  }
+
+  .input-text {
+    font-size: 7px;
+    padding: 2px;
+    border-radius: 3px !important;
+  }
+
+  .heading-login {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 5px;
+
   }
 
   .form-group {
     flex-direction: column;
-    gap: 1rem;
+    gap: 3px;
   }
 
   .form-group input {
-    padding: 0.5rem;
-    font-size: 0.9rem;
+    padding: 3px;
+    font-size: 8px;
+  }
+
+  .btn-info {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 1px;
+    font-size: 8px;
+    border-radius: 3px;
   }
 }
 
@@ -154,18 +229,20 @@ body {
 
 .page-background {
   background-image: url("./assets/TRUMP.png");
-  background-size: 100% 100%;
+  background-size: 150% auto;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
   margin: 0 auto;
+  background-color: #000000;
 }
 
 
 .client-dashboard-bg {
   background-image: url("./assets/bgtower.jpg");
-  background-size:cover;
-  background-position: center -100px; /* Moved up by 100px, adjust this value as needed */
+  background-size: cover;
+  background-position: center -100px;
+  /* Moved up by 100px, adjust this value as needed */
   background-repeat: repeat-y;
   min-height: 100vh;
   background-attachment: fixed;
@@ -174,7 +251,7 @@ body {
 /* For screens 1440px and above */
 @media screen and (min-width: 1440px) {
   .client-dashboard-bg {
-    background-position: center -108px; 
+    background-position: center -108px;
   }
 }
 
@@ -182,7 +259,7 @@ body {
 /* For screens 3840px and above (4K/UHD) */
 @media screen and (min-width: 3840px) {
   .client-dashboard-bg {
-    background-position: center -280px; 
+    background-position: center -280px;
   }
 }
 

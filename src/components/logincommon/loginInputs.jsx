@@ -10,7 +10,7 @@ const LoginInputs = ({ label, type, name, placeholder, value, onChange }) => {
     return (
         <div>
             {label && (
-                <label htmlFor={inputId} style={{ display: 'block', marginBottom: '6px', fontWeight: '500' }}>
+                <label htmlFor={inputId} style={{ display: 'block', fontWeight: '300' }} className='input-label'>
                     {label}
                 </label>
             )}
@@ -24,22 +24,17 @@ const LoginInputs = ({ label, type, name, placeholder, value, onChange }) => {
                     onChange={onChange}
                     style={{
                         width: '100%',
-                        padding: isPassword ? '10px 40px 10px 10px' : '10px',
-                        fontSize: '16px',
+                        // padding: isPassword ? '2px' : '2px',
                         border: '1px solid #ccc',
                         borderRadius: '5px',
                     }}
+                    className='input-text'
                 />
                 {isPassword && (
                     <div
                         onClick={() => setShowPassword(prev => !prev)}
-                        style={{
-                            position: 'absolute',
-                            top: '50%',
-                            right: '12px',
-                            transform: 'translateY(-50%)',
-                            cursor: 'pointer',
-                        }}
+
+                        className='password-eye'
                     >
                         {showPassword ? <IoEyeOutline /> : <FaRegEyeSlash />}
                     </div>

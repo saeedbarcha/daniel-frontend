@@ -7,7 +7,7 @@ import { useLoginMutation } from "../../features/usersApiSlice";
 import { setCredentials } from "../../features/authSlice";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 
 const ClientLogin = () => {
   const [inputData, setInputData] = useState({
@@ -52,41 +52,41 @@ const ClientLogin = () => {
   return (
     <div className="page-background">
       <motion.div
-       initial={{ opacity: 0, y: '100vh' }}
-  animate={{ opacity: 1, y: `50vh` }}
-  transition={{ duration: 0.8, ease: 'easeOut' }}
- 
+        initial={{ opacity: 0, y: '100vh' }}
+        animate={{ opacity: 1, y: `50vh` }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+
       >
-      <form
-        className="form-container"
-        onSubmit={submitHandler}
-      >
-        <Heading heading="Login" />
+        <form
+          className="form-container"
+          onSubmit={submitHandler}
+        >
+          <Heading heading="Login" />
 
-        <div>
-          <LoginInputs
-            label="Email"
-            name="email"
-            type="email"
-            value={inputData.email}
-            onChange={handleOnChange}
-            placeholder="example@gmail.com"
-          />
-        </div>
+          <div>
+            <LoginInputs
+              label="Email"
+              name="email"
+              type="email"
+              value={inputData.email}
+              onChange={handleOnChange}
+              placeholder="example@gmail.com"
+            />
+          </div>
 
-        <div>
-          <LoginInputs
-            label="Password"
-            name="password"
-            type="password"
-            value={inputData.password}
-            onChange={handleOnChange}
-            placeholder="Password"
-          />
-        </div>
+          <div>
+            <LoginInputs
+              label="Password"
+              name="password"
+              type="password"
+              value={inputData.password}
+              onChange={handleOnChange}
+              placeholder="Password"
+            />
+          </div>
 
-        <button className="btn btn-info">Login</button>
-      </form>
+          <button className="btn-info">Login</button>
+        </form>
       </motion.div>
     </div>
   );

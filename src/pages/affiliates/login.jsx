@@ -80,10 +80,10 @@ const AffiliatesLogin = () => {
           onChange={handleOnChange}
           placeholder="Password"
         />
-       
+
       </div>
 
-      <button className="btn btn-info">Login</button>
+      <button className="btn-info">Login</button>
     </form>
   );
 };

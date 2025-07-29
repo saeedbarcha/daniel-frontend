@@ -40,11 +40,11 @@ const AdminLogin = () => {
         role: "ADMIN",
       };
       const res = await login(loginData).unwrap();
-          
+
       dispatch(setCredentials({ ...res }));
       navigate(redirect);
     } catch (err) {
-   toast.error(
+      toast.error(
         err?.data?.message || "Login failed. Please check your credentials."
       );
     }
@@ -60,33 +60,33 @@ const AdminLogin = () => {
 
   return (
 
-  <form className="form-container" onSubmit={submitHandler}>
-    <Heading heading="Admin Login" />
+    <form className="form-container" onSubmit={submitHandler}>
+      <Heading heading="Admin Login" />
 
-    <div>
-      <LoginInputs
-        label="Email"
-        name="email"
-        type="email"
-        value={inputData.email}
-        onChange={handleOnChange}
-        placeholder="example@gmail.com"
-      />
-    </div>
+      <div>
+        <LoginInputs
+          label="Email"
+          name="email"
+          type="email"
+          value={inputData.email}
+          onChange={handleOnChange}
+          placeholder="example@gmail.com"
+        />
+      </div>
 
-    <div>
-      <LoginInputs
-        label="Password"
-        name="password"
-        type="password"
-        value={inputData.password}
-        onChange={handleOnChange}
-        placeholder="Password"
-      />
-    </div>
+      <div>
+        <LoginInputs
+          label="Password"
+          name="password"
+          type="password"
+          value={inputData.password}
+          onChange={handleOnChange}
+          placeholder="Password"
+        />
+      </div>
 
-    <button className="btn btn-info">Login</button>
-  </form>
+      <button className="btn-info">Login</button>
+    </form>
 
 
   );
