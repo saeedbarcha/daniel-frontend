@@ -13,7 +13,7 @@ import AdminDashboard from './pages/admin/adminDashboard';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProfilePage from './pages/profile/profile';
-import PageNotFound from './pages/not_found/pagenotFound';
+import PageNotFound from './pages/not_found/pagenotfound';
 
 const App = () => {
 
