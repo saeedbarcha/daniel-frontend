@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { useUpdateUserProfileMutation } from "../../features/usersApiSlice";
 import { setCredentials } from "../../features/authSlice";
-import LoginInputs from "../../Components/logincommon/loginInputs";
+import LoginInputs from "../../components/logincommon/loginInputs";
 import { useNavigate } from "react-router";
 
 const ProfilePage = () => {
