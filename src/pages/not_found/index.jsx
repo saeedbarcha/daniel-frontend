@@ -18,6 +18,9 @@ const PageNotFound = () => {
       <Link to="/admin-login" style={{ marginTop: "20px", fontSize: "1rem", color: "#007bff" }}>
         Go back to Home
       </Link>
+        <Link to="/client-login" style={{ marginTop: "20px", fontSize: "1rem", color: "#007bff" }}>
+        Go back to Home
+      </Link>
     </div>
   );
 };
