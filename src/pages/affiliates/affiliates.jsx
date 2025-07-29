@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderAffiliates from '../../Components/afffiliates/Header';
+import HeaderAffiliates from '../../components/afffiliates/Header';
 import InputsAffiliates from '../../components/afffiliates/Inputs';
 import ManagedClintsAffiliates from '../../components/afffiliates/ManagedClints';
 import Sublayout from '../../layouts/Sublayout';

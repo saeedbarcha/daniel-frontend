@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { useLocation } from "react-router-dom";
 import LoginInputs from "../../components/logincommon/loginInputs";
-import Heading from "../../Components/logincommon/Heading";
+import Heading from "../../components/logincommon/Heading";
 import { useLoginMutation } from "../../features/usersApiSlice";
 import { setCredentials } from "../../features/authSlice";
 import { useDispatch, useSelector } from "react-redux";

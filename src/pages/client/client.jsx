@@ -1,12 +1,12 @@
 import React from "react";
 import Layout from "../../layouts/layout";
-import PayoutDate from "../../Components/client/PayoutDate";
-import PayoutCard from "../../Components/client/PayoutCard";
-import AssetsCard from "../../Components/client/AssetsCard";
-import TransactionsCard from "../../Components/client/TrasactionsCard";
-import AccountDetailsCard from "../../Components/client/AccountDetailsCard";
-import ReadMore from "../../Components/client/ReadMore";
-import AskquestionCard from "../../Components/client/AskquestionCard";
+import PayoutDate from "../../components/client/PayoutDate";
+import PayoutCard from "../../components/client/PayoutCard";
+import AssetsCard from "../../components/client/AssetsCard";
+import TransactionsCard from "../../components/client/TrasactionsCard";
+import AccountDetailsCard from "../../components/client/AccountDetailsCard";
+import ReadMore from "../../components/client/ReadMore";
+import AskquestionCard from "../../components/client/AskquestionCard";
 import { useSelector } from "react-redux";
 import { useGetProfileQuery } from "../../features/usersApiSlice";
 
