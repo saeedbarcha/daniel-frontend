@@ -248,6 +248,8 @@ body {
   background-attachment: fixed;
 }
 
+
+
 /* For screens 1440px and above */
 @media screen and (min-width: 1440px) {
   .client-dashboard-bg {
